@@ -1,6 +1,6 @@
-name: "S3 File Upload"
-description: "Upload an object to an S3 bucket."
-author: "zdurham"
+name: "lambda create layer"
+description: "Create lambda layer"
+author: "YouPrice"
 runs:
   using: docker
   image: Dockerfile
