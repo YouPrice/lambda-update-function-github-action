@@ -15,6 +15,7 @@ aws lambda publish-layer-version \
   --layer-name ${LAYER_NAME} \
   --license-info "MIT" \
   --content S3Bucket=${S3_BUCKET},S3Key=${S3_KEY} \
+  --region ${AWS_REGION} \
   --compatible-runtimes python3.6 python3.7 python3.8 python3.9
 
 rm -rf ~/.aws
