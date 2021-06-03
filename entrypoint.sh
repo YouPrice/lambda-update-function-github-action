@@ -16,9 +16,9 @@ LAYER_ARN = $(aws lambda publish-layer-version \
   --license-info "MIT" \
   --content S3Bucket=${S3_BUCKET},S3Key=${S3_KEY} \
   --region ${AWS_REGION} \
-  --compatible-runtimes python3.6 python3.7 python3.8 python3.9)
+  --compatible-runtimes python3.6 python3.7 python3.8 python3.9 | jq -r '.LayerVersionArn')
   
-echo "AWS_LAYER_ARN=$LAYER_ARN.LayerVersionArn" >> $GITHUB_ENV
+echo "AWS_LAYER_ARN=$LAYER_ARN" >> $GITHUB_ENV
 
 rm -rf ~/.aws
 
